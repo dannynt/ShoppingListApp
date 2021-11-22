@@ -12,13 +12,13 @@ Shopping List app provides the possibility to create a shopping list and manage 
 
 ### Functional Requirements
 
-1. As a shopper I want to add shopping items to my shopping list to keep track what items I need to get. https://github.com/dannynt/ShoppingListApp/issues/1
+1. [As a shopper I want to add shopping items to my shopping list to keep track what items I need to get.](https://github.com/dannynt/ShoppingListApp/issues/1)
 
-2. As a shopper I want to remove items from my shopping list to get rid of unnecesary items. #2
+2. [As a shopper I want to remove items from my shopping list to get rid of unnecesary items.](https://github.com/dannynt/ShoppingListApp/issues/2)
 
-3. As a shopper I want to check items in my shopping list to know that I have acquired checked items. #3
+3. [As a shopper I want to check items in my shopping list to know that I have acquired checked items.](https://github.com/dannynt/ShoppingListApp/issues/3)
 
-4. As a shopper I want to uncheck items in my shopping list to know what items I still have to get. #4
+4. [As a shopper I want to uncheck items in my shopping list to know what items I still have to get.](https://github.com/dannynt/ShoppingListApp/issues/3)
 
 ---
 
