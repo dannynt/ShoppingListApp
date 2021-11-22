@@ -1,13 +1,14 @@
 # Shopping List App
 
 _Author: Daniel Nael_
+
 _Mobi Lab test assignment_
 
 ---
 
 ## The Goal
 
-Shopping List app provides its the possibility to create a shopping list and manage it.
+Shopping List app provides the possibility to create a shopping list and manage it.
 
 ---
 
