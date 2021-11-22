@@ -24,7 +24,10 @@ Shopping List app provides the possibility to create a shopping list and manage 
 
 ## Running the App
 
-TODO
+1. Move to `ShoppingListApp` command in your terminal window.
+2. Run `npm install`.
+3. On iOS use `react-native run-ios` command to run.
+4. On Android use `react-native run-android` command to run.
 
 ---
 
