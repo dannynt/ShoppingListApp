@@ -9,7 +9,6 @@ const App = () => {
   useEffect(() => {
     const getItems = async () => {
       const serverItems = await fetchItems();
-      console.log(serverItems['results']);
       setItems(serverItems['results'].reverse());
     };
 
@@ -89,13 +88,45 @@ const App = () => {
     }
   };
 
+  const deleteItem = id => {
+    var myHeaders = new Headers();
+    myHeaders.append(
+      'X-Parse-Application-Id',
+      'Sl2YjqXZP1s5DAO7ua0LQTx6JI9iFcPaDFkyLFl2',
+    );
+    myHeaders.append(
+      'X-Parse-REST-API-Key',
+      'WghsAislQI0Vq10BmY6tLoq4xnvqUoEDjOtnCafc',
+    );
+
+    var raw = '';
+
+    var requestOptions = {
+      method: 'DELETE',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    fetch('https://parseapi.back4app.com/classes/Item/' + id, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
+    setItems(oldItems => {
+      return oldItems.filter(item => item['objectId'] !== id);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Header addItem={addItem} />
       <FlatList
         testID="shopping-list"
         data={items}
-        renderItem={({item}) => <ListItem data={item} />}
+        renderItem={({item}) => (
+          <ListItem data={item} deleteItem={deleteItem} />
+        )}
       />
     </View>
   );
