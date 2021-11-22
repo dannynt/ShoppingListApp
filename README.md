@@ -10,6 +10,10 @@ _Mobi Lab test assignment_
 
 Shopping List app provides the possibility to create a shopping list and manage it.
 
+### Functional Requirements
+
+1. As a shopper I want to add shopping items to my shopping list to keep track what items I need to get. #1
+
 ---
 
 ## Running the App
