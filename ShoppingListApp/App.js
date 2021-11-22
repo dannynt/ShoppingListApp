@@ -5,13 +5,12 @@ import Header from './components/Header';
 
 const App = () => {
   const [items, setItems] = useState([]);
+  const getItems = async () => {
+    const serverItems = await fetchItems();
+    setItems(serverItems['results'].reverse());
+  };
 
   useEffect(() => {
-    const getItems = async () => {
-      const serverItems = await fetchItems();
-      setItems(serverItems['results'].reverse());
-    };
-
     getItems();
   }, []);
 
@@ -118,6 +117,36 @@ const App = () => {
     });
   };
 
+  const checkItem = async (id, checked) => {
+    var myHeaders = new Headers();
+    myHeaders.append(
+      'X-Parse-Application-Id',
+      'Sl2YjqXZP1s5DAO7ua0LQTx6JI9iFcPaDFkyLFl2',
+    );
+    myHeaders.append(
+      'X-Parse-REST-API-Key',
+      'WghsAislQI0Vq10BmY6tLoq4xnvqUoEDjOtnCafc',
+    );
+    myHeaders.append('Content-Type', 'text/plain');
+
+    var raw = '{"checked" : ' + checked + ' }';
+
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+    };
+
+    const res = await fetch(
+      'https://parseapi.back4app.com/classes/Item/' + id,
+      requestOptions,
+    );
+    const data = await res.json();
+
+    getItems();
+  };
+
   return (
     <View style={styles.container}>
       <Header addItem={addItem} />
@@ -125,7 +154,7 @@ const App = () => {
         testID="shopping-list"
         data={items}
         renderItem={({item}) => (
-          <ListItem data={item} deleteItem={deleteItem} />
+          <ListItem data={item} deleteItem={deleteItem} checkItem={checkItem} />
         )}
       />
     </View>

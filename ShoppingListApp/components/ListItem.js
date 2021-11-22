@@ -2,9 +2,18 @@ import React from 'react';
 import {Text, Button, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
-const ListItem = ({data, deleteItem}) => {
+const ListItem = ({data, deleteItem, checkItem}) => {
   return (
     <View style={styles.listItem}>
+      <Icon
+        style={styles.icon}
+        name={data.checked ? 'check-square-o' : 'square-o'}
+        size={20}
+        color="firebrick"
+        onPress={() => {
+          checkItem(data.objectId, !data.checked);
+        }}
+      />
       <Text style={styles.listTextItem} testID={'item-' + data.name}>
         {data.name}
       </Text>
