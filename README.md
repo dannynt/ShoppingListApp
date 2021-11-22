@@ -30,10 +30,19 @@ TODO
 
 ## Running the Tests
 
+Running the tests also requires Node.js to be installed.
+
+To run the tests:
+
+1. Move to `ShoppingListApp` directory using `cd ShoppingListApp` command in your terminal window.
+2. Run `npm run test` command in terminal window.
+
 ---
 
 ## The Architecture
 
-Shopping List App is created with React Native Javascript library.
+Shopping List App is created with React Native Javascript library. The source code is located in `ShoppingListApp` directory. The main app file is called `App.js`, smaller React components are made for this application and they are located in `ShoppingListApp\components` directory.
+
+Tests are implemented using [Jest](https://jestjs.io/) framework.
 
 ---
